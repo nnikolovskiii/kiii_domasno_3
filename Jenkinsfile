@@ -6,7 +6,7 @@ node {
     stage('Build image') {
        app = docker.build("nnikolovskiii/kiii_domasno_3")
     }
-    stage('Push image') {   
+    stage('Push image') {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
             app.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}")
             app.push("${env.BRANCH_NAME}-latest")
