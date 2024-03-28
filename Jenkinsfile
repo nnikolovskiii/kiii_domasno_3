@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build image') {
             when {
-                branch 'dev' 
+                branch 'develop'
             }
             steps {
                 script {
@@ -21,7 +21,7 @@ pipeline {
 
         stage('Push image') {
             when {
-                branch 'dev'
+                branch 'develop'
             }
             steps {
                 script {
